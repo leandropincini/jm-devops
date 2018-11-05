@@ -1,0 +1,36 @@
+version: "2.0"
+services:
+  jm-mariadb:
+    hostname: jm-mariadb
+    container_name: jm-mariadb
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+#  jm-mysql:
+#    hostname: jm-mysql
+#    container_name: jm-mysql
+#    ports:
+#      - 3306:3306
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+
+#  rabbitmq:
+#    hostname: rabbitmq-spoc
+#    container_name: rabbitmq-spoc
+#    environment:
+#      RABBITMQ_USER: rabbitmq
+#      RABBITMQ_PASSWORD: rabbitmq
+#    ports:
+#      - 5672:5672
+
+#  config:
+#    build: config
+#    ports:
+#      - 8888:8888
+
+#  platform:
+#    build: platform
+#    ports:
+#      - 6000:6000

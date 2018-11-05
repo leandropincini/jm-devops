@@ -1,0 +1,53 @@
+version: "2.0"
+networks:
+  app-tier:
+    driver: bridge
+services:
+  jm-mariadb:
+    image: mariadb:10.3.10
+    networks:
+      - app-tier
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+#  jm-mysql:
+#    image: mysql:5.7.21
+#    networks:
+#      - app-tier
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+
+#  rabbitmq:
+#    image: rabbitmq:3.7-management
+#    restart: always
+#    networks:
+#      - app-tier
+#    ports:
+#      - 15672:15672
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+
+#  config:
+#    image: leandropincini/spoc-config
+#    restart: always
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+
+#  platform:
+#    image: leandropincini/spoc-platform
+#    restart: always
+#    depends_on:
+#      config:
+#        condition: service_healthy
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
